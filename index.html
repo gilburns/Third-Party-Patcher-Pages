@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Third Party Patcher — MDM-agnostic macOS patching</title>
+<meta name="description" content="Third Party Patcher (TPP) is a macOS daemon-based patching and self-service software distribution system for IT admins. Discovers, checks, stages, and applies third-party app updates — powered by Installomator, prompted with swiftDialog, and MDM-agnostic.">
+<meta property="og:title" content="Third Party Patcher — MDM-agnostic macOS patching">
+<meta property="og:description" content="A macOS daemon-based patching and self-service software distribution system for IT administrators. Discover, check, stage, and apply third-party app updates automatically.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thirdpartypatcher.org">
+<meta property="og:image" content="https://thirdpartypatcher.org/assets/img/available-software-overview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://thirdpartypatcher.org">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v11.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M7.5 10.5 12 15l4.5-4.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 18.5h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      Third Party Patcher
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#apps">User apps</a>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="#docs">Docs</a>
+      <div class="nav-cta">
+        <a class="button secondary small" href="https://github.com/gilburns/Third-Party-Patcher/wiki">Wiki</a>
+        <a class="button primary small" href="https://github.com/gilburns/Third-Party-Patcher">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="badges">
+          <img src="https://img.shields.io/github/v/release/gilburns/Third-Party-Patcher" alt="Latest release">
+          <img src="https://img.shields.io/github/downloads/gilburns/Third-Party-Patcher/latest/total" alt="Downloads">
+          <img src="https://img.shields.io/badge/macOS-14%2B-success" alt="macOS 14+">
+          <img src="https://img.shields.io/github/license/gilburns/Third-Party-Patcher" alt="MIT License">
+        </div>
+        <h1>Third-party patching for macOS,<br><span class="accent">without the babysitting.</span></h1>
+        <p class="hero-sub">
+          Third Party Patcher discovers installed apps, checks for updates, stages installers in the
+          background, and applies them on a schedule you control — with optional swiftDialog prompts
+          so end users always know what's happening. MDM-agnostic, and built on <a href="https://github.com/Installomator/Installomator">Installomator</a>.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary large" href="https://github.com/gilburns/Third-Party-Patcher/releases/latest">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a.75.75 0 0 1 .75.75v7.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1Z"/><path d="M2.75 13a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5H2.75Z"/></svg>
+            Download latest release
+          </a>
+          <a class="button secondary large" href="https://github.com/gilburns/Third-Party-Patcher">View on GitHub</a>
+          <a class="button secondary large" href="https://github.com/gilburns/Third-Party-Patcher/wiki">Read the docs</a>
+        </div>
+        <p class="hero-meta">Free &amp; open source · MIT licensed · Signed &amp; notarized .pkg for MDM deployment</p>
+      </div>
+
+      <div class="hero-shot">
+        <img class="hero-shot-img" src="assets/img/available-software-overview.png" alt="Available Software app showing a self-service catalog of macOS applications with install status" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Four phases, each on its own schedule</h2>
+        <p>A lightweight <code>LaunchDaemon</code> wakes <code>patcherscheduler</code> every 10 minutes. Each wake is cheap — it exits in milliseconds when nothing is due — and every phase can also be triggered on demand from the command line or from the user-facing apps.</p>
+      </div>
+
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-num">01 · SCAN</div>
+          <h3>Discover</h3>
+          <p>Evaluates Installomator labels to find every installed third-party app on the Mac.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">02 · CHECK</div>
+          <h3>Compare</h3>
+          <p>Looks up the latest available version for each app and flags what needs updating.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">03 · STAGE</div>
+          <h3>Download</h3>
+          <p>Downloads and validates installers in the background — no interruption, no waiting.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">04 · APPLY</div>
+          <h3>Install</h3>
+          <p>Installs staged updates, prompting the user only if a blocking process is running.</p>
+        </div>
+      </div>
+
+      <div class="daemon-note">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5v5l3.2 1.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Default intervals: Scan every 30 days, Check &amp; Stage every 4 hours, Apply every 24 hours — plus an optional monthly patching cadence that gates Apply to a specific weekday, like the second Tuesday of the month. Every interval is configurable. See the <a href="https://github.com/gilburns/Third-Party-Patcher/wiki/Scheduling">Scheduling wiki page</a>.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apps" style="border-top:1px solid var(--border); background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">User-facing apps</span>
+        <h2>Built for IT — and for the people using the Mac</h2>
+        <p>Two optional apps give end users visibility and choice, without giving up MDM control.</p>
+      </div>
+
+      <div class="showcase">
+        <div class="showcase-card">
+          <div class="showcase-shot">
+            <img src="assets/img/patchermenu-overview.png" alt="PatcherMenu popover showing pending updates, deadline details, and last activity timestamps" loading="lazy">
+          </div>
+          <div class="showcase-body">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              PatcherMenu
+            </h3>
+            <p>An optional menu bar app that gives users real-time visibility into patch status. The icon updates automatically when updates are staged or pending.</p>
+            <ul class="showcase-list">
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pending updates and pending downloads at a glance</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Deadline countdown and per-phase last-activity timestamps</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>A Run Now menu to trigger any phase immediately</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Enabled with a single preference key, fully MDM-configurable</li>
+            </ul>
+            <a class="showcase-link" href="https://github.com/gilburns/Third-Party-Patcher/wiki/PatcherMenu">PatcherMenu docs →</a>
+          </div>
+        </div>
+
+        <div class="showcase-card">
+          <div class="showcase-shot">
+            <img src="assets/img/available-software-catalog-detail.png" alt="Available Software app showing a detail view for an app with its publisher, description, links, and update history" loading="lazy">
+          </div>
+          <div class="showcase-body">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>
+              Available Software
+            </h3>
+            <p>A standalone window app that gives users a self-service software catalog and a full view of every app under patcher management.</p>
+            <ul class="showcase-list">
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Optional titles users can install on demand, IT-configured</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Every managed app, with status, install path, and history</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>A chronological update history, filterable by event type</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Toolbar Run Now menu to trigger phases directly</li>
+            </ul>
+            <a class="showcase-link" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Available-Software">Available Software docs →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="action-grid">
+        <div class="action-copy">
+          <span class="eyebrow">User prompts &amp; deferrals</span>
+          <h3 style="margin-top:10px; font-size:26px;">Informed, not interrupted</h3>
+          <p>All interactive UI is powered by <a href="https://github.com/swiftDialog/swiftDialog">swiftDialog</a>, launched in the console user's session. Non-blocking progress windows appear during Scan, Check, and Stage; a deferral prompt appears before Apply when a blocking process is detected — letting users pick a defer duration or install right away.</p>
+          <p>Focus/DND detection silently defers without incrementing the deferral counter, so a meeting or presentation never pushes someone toward a deadline unfairly.</p>
+          <table class="threshold-table">
+            <tr><th>Threshold</th><th>Default</th><th>Behavior</th></tr>
+            <tr><td>Focus deadline</td><td>4 days</td><td>Focus/DND no longer silently defers</td></tr>
+            <tr><td>Hard deadline</td><td>14 days</td><td>Defer button removed; update applies unconditionally</td></tr>
+          </table>
+          <a class="showcase-link" href="https://github.com/gilburns/Third-Party-Patcher/wiki/User-Prompts" style="margin-top:20px;">User Prompts &amp; Deferral docs →</a>
+        </div>
+        <div class="action-shots">
+          <figure>
+            <img src="assets/img/prompts-apply-progress.gif" alt="Animated apply progress dialog installing several app updates one after another" loading="lazy">
+            <figcaption>Full-screen apply progress</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/prompts-deferral.png" alt="Deferral prompt asking the user to defer or continue installing four pending updates" loading="lazy">
+            <figcaption>Deferral prompt</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Features</span>
+        <h2>Everything a fleet-scale patching tool needs</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7l8-4 8 4v10l-8 4-8-4V7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 7l8 4 8-4M12 11v10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>MDM-agnostic</h3>
+          <p>Works with Jamf Pro, Intune, or any MDM that can deploy a package and a configuration profile — no vendor lock-in.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Installomator-powered</h3>
+          <p>Updates are driven by community-maintained Installomator label files, downloaded and kept current automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v4H4V5Zm0 6h10v8H4v-8Zm12 2h4v6h-4v-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Managed &amp; custom labels</h3>
+          <p>Supply your own Installomator-compatible label files to override existing labels or support internal apps.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 12.5l1.8 1.8 3.2-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Self-service catalog</h3>
+          <p>Let users install approved optional software on demand from the Available Software app.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h3>Deferral &amp; deadlines</h3>
+          <p>Configurable defer options with Focus/DND awareness and two-tier deadline enforcement.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12h6M9 16h6M9 8h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Compliance reporting</h3>
+          <p><code>patcherreport</code> generates summary, pending, recent, broken, and deferral reports from local state — no <code>sudo</code> required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="install">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Requirements &amp; installation</span>
+        <h2>Deploy in minutes via MDM</h2>
+        <p>Distribute the signed and notarized <code>.pkg</code> through your MDM. It installs three command-line binaries, the LaunchDaemon, and loads the daemon immediately.</p>
+      </div>
+
+      <div class="install-grid">
+        <div>
+          <ul class="req-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong style="color:var(--text)">macOS 14 Sonoma</strong> or later</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><a href="https://github.com/swiftDialog/swiftDialog">swiftDialog</a> 2.x or later for user prompts — install via <code>patcher ensure swiftdialog</code></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Network access to GitHub for Installomator label updates and app downloads</span>
+            </li>
+          </ul>
+
+          <table class="binaries-table">
+            <tr><th>Binary</th><th>Purpose</th></tr>
+            <tr><td><code>patcher</code></td><td>Runs individual patching phases on demand</td></tr>
+            <tr><td><code>patcherscheduler</code></td><td>Daemon entrypoint; also provides a status subcommand</td></tr>
+            <tr><td><code>patcherreport</code></td><td>Generates patch compliance reports</td></tr>
+            <tr><td><code>PatcherMenu.app</code></td><td>Menu bar status and Run Now trigger</td></tr>
+            <tr><td><code>Available Software.app</code></td><td>Self-service catalog and management view</td></tr>
+          </table>
+        </div>
+
+        <div>
+          <div class="code-block"><span class="comment"># Preferences are managed via the com.gilburns.patcher domain</span>
+<span class="comment"># MDM configuration profile (preferred):</span>
+<span class="path">/Library/Managed Preferences/com.gilburns.patcher.plist</span>
+
+<span class="comment"># Local override:</span>
+<span class="path">/Library/Preferences/com.gilburns.patcher.plist</span>
+
+<span class="comment"># Custom / override Installomator labels:</span>
+<span class="path">/Library/Application Support/Patcher/Managed/Labels/</span></div>
+          <p style="margin-top:16px; font-size:14px; color:var(--text-muted);">
+            Migrating from App Auto-Patch? Preference key names are largely compatible — see the
+            <a href="https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys#compatibility-with-app-auto-patch">compatibility note</a>.
+            Ready-to-use inventory scripts for <a href="https://github.com/gilburns/Third-Party-Patcher/tree/main/MDM%20Examples/Jamf%20Extension%20Attributes">Jamf</a>
+            and <a href="https://github.com/gilburns/Third-Party-Patcher/tree/main/MDM%20Examples/Intune%20Custom%20Attributes">Intune</a> are included in the repo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="docs" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Documentation</span>
+        <h2>Full IT-admin docs in the project wiki</h2>
+      </div>
+
+      <div class="docs-grid">
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Home">Home <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Installation">Installation <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/How-It-Works">How It Works <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Scheduling">Scheduling <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/User-Prompts">User Prompts <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Deferral-and-Deadlines">Deferral &amp; Deadlines <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/PatcherMenu">PatcherMenu <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Available-Software">Available Software <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Command-Line-Reference">Command-Line Reference <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys">Preference Keys <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Installomator-Integration">Installomator Integration <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Managed-Labels">Managed Labels <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Reporting">Reporting <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Logs-and-Troubleshooting">Logs &amp; Troubleshooting <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Contributing">Contributing <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to stop chasing third-party updates by hand?</h2>
+      <p>Free, open source, and MIT licensed. Deploy today via your MDM of choice.</p>
+      <div class="hero-actions">
+        <a class="button primary large" href="https://github.com/gilburns/Third-Party-Patcher/releases/latest">Download latest release</a>
+        <a class="button secondary large" href="https://github.com/gilburns/Third-Party-Patcher">Star on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" style="width:24px;height:24px;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13"><path d="M12 3v11.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M7.5 10.5 12 15l4.5-4.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 18.5h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      <span>© <span id="year"></span> Gil Burns · Third Party Patcher is released under the <a href="https://github.com/gilburns/Third-Party-Patcher/blob/main/LICENSE">MIT License</a></span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/gilburns/Third-Party-Patcher">GitHub</a>
+      <a href="https://github.com/gilburns/Third-Party-Patcher/wiki">Wiki</a>
+      <a href="https://github.com/gilburns/Third-Party-Patcher/releases">Releases</a>
+      <a href="https://github.com/gilburns/Third-Party-Patcher/issues">Issues</a>
+      <a href="https://github.com/gilburns/Third-Party-Patcher/wiki/Contributing">Contributing</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
