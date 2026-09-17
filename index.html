@@ -74,7 +74,7 @@
       </div>
 
       <div class="hero-shot">
-        <img class="hero-shot-img" src="assets/img/available-software-overview.png" alt="Available Software app showing a self-service catalog of macOS applications with install status" loading="eager">
+        <img class="hero-shot-img zoomable" src="assets/img/available-software-overview.png" alt="Available Software app showing a self-service catalog of macOS applications with install status" loading="eager">
       </div>
     </div>
   </section>
@@ -128,7 +128,7 @@
       <div class="showcase">
         <div class="showcase-card">
           <div class="showcase-shot">
-            <img src="assets/img/patchermenu-overview.png" alt="PatcherMenu popover showing pending updates, deadline details, and last activity timestamps" loading="lazy">
+            <img class="zoomable" src="assets/img/patchermenu-overview.png" alt="PatcherMenu popover showing pending updates, deadline details, and last activity timestamps" loading="lazy">
           </div>
           <div class="showcase-body">
             <h3>
@@ -148,7 +148,7 @@
 
         <div class="showcase-card">
           <div class="showcase-shot">
-            <img src="assets/img/available-software-catalog-detail.png" alt="Available Software app showing a detail view for an app with its publisher, description, links, and update history" loading="lazy">
+            <img class="zoomable" src="assets/img/available-software-catalog-detail.png" alt="Available Software app showing a detail view for an app with its publisher, description, links, and update history" loading="lazy">
           </div>
           <div class="showcase-body">
             <h3>
@@ -186,11 +186,11 @@
         </div>
         <div class="action-shots">
           <figure>
-            <img src="assets/img/prompts-apply-progress.gif" alt="Animated apply progress dialog installing several app updates one after another" loading="lazy">
+            <img class="zoomable" src="assets/img/prompts-apply-progress.gif" alt="Animated apply progress dialog installing several app updates one after another" loading="lazy">
             <figcaption>Full-screen apply progress</figcaption>
           </figure>
           <figure>
-            <img src="assets/img/prompts-deferral.gif" alt="Deferral prompt asking the user to defer or continue installing four pending updates" loading="lazy">
+            <img class="zoomable" src="assets/img/prompts-deferral.gif" alt="Deferral prompt asking the user to defer or continue installing four pending updates" loading="lazy">
             <figcaption>Deferral prompt</figcaption>
           </figure>
         </div>
@@ -330,6 +330,13 @@
   </section>
 
 </main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
 
 <footer class="site-footer">
   <div class="container footer-inner">
