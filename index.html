@@ -218,6 +218,37 @@
     </div>
   </section>
 
+  <section class="section" id="branding" style="border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="action-grid">
+        <div class="action-copy">
+          <span class="eyebrow">Branding &amp; customization</span>
+          <h3 style="margin-top:10px; font-size:26px;">Looks like it came from your IT team</h3>
+          <p>Every surface your users see can carry your organization's name, colors, icons, and help desk contact. A prompt that clearly comes from <em>your</em> team gets read and acted on. A generic one gets dismissed, or reported as suspicious.</p>
+          <p>A handful of preference keys gives you a consistent look everywhere, deployed with the same configuration profile as the rest of your settings.</p>
+          <table class="threshold-table">
+            <tr><th>Surface</th><th>What you can brand</th></tr>
+            <tr><td>Patching prompts</td><td>Title, banner &amp; font colors, main icon, badge icon, support contact</td></tr>
+            <tr><td>PatcherMenu</td><td>Menu bar icon, support contact, visible sections &amp; actions</td></tr>
+            <tr><td>Available Software</td><td>Company name, title, header &amp; app icons, featured apps</td></tr>
+            <tr><td>Notifications</td><td>Your title leads every notification</td></tr>
+          </table>
+          <a class="showcase-link" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Branding-and-Customization" style="margin-top:20px;">Branding &amp; Customization docs →</a>
+        </div>
+        <div class="action-shots">
+          <figure>
+            <img class="zoomable" src="assets/img/prompts-apply-notification.png" alt="macOS notification titled Acme Mac Updates reporting three apps updated" loading="lazy">
+            <figcaption>Your title on every notification</figcaption>
+          </figure>
+          <figure>
+            <img class="zoomable" src="assets/img/available-software-sidebar-header.png" alt="Available Software sidebar header showing the company name XYZ Corp, Inc." loading="lazy">
+            <figcaption>Your company name in Available Software</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="features" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-head">
@@ -265,7 +296,7 @@
       <div class="section-head">
         <span class="eyebrow">Requirements &amp; installation</span>
         <h2>Deploy in minutes via MDM</h2>
-        <p>Distribute the signed and notarized <code>.pkg</code> through your MDM. It installs three command-line binaries, the LaunchDaemon, and loads the daemon immediately.</p>
+        <p>Distribute the signed and notarized <code>.pkg</code> through your MDM. It installs three command-line binaries, three apps, and the LaunchDaemon, then loads the daemon immediately.</p>
       </div>
 
       <div class="install-grid">
@@ -273,7 +304,7 @@
           <ul class="req-list">
             <li>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span><strong style="color:var(--text)">macOS 14 Sonoma</strong> or later</span>
+              <span><strong style="color:var(--text)">macOS 15 Sequoia</strong> or later</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -292,6 +323,7 @@
             <tr><td><code>patcherreport</code></td><td>Generates patch compliance reports</td></tr>
             <tr><td><code>PatcherMenu.app</code></td><td>Menu bar status and Run Now trigger</td></tr>
             <tr><td><code>Available Software.app</code></td><td>Self-service catalog and management view</td></tr>
+            <tr><td><code>PatcherNotifier.app</code></td><td>Delivers macOS notifications for background and notification-style installs</td></tr>
           </table>
         </div>
 
@@ -326,6 +358,7 @@
         <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/User-Prompts">User Prompts <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Deferral-and-Deadlines">Deferral &amp; Deadlines <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/PatcherMenu">PatcherMenu <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Branding-and-Customization">Branding &amp; Customization <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Available-Software">Available Software <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Command-Line-Reference">Command-Line Reference <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="doc-card" href="https://github.com/gilburns/Third-Party-Patcher/wiki/Preference-Keys">Preference Keys <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
